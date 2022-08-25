@@ -1,6 +1,12 @@
 <script setup>
+import { ref } from "vue"
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+const userId = ref();
+const setUser = () => {
+  if (!userId.value) return null;
+  window._ce.setUserId(userId.value);
+}
 </script>
 
 <template>
@@ -9,6 +15,11 @@ import HelloWorld from './components/HelloWorld.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
+      <div class="flex justify-center items-center w-full my-2 py-2">
+        <input v-model="userId" placeholder="Set user id" type="text" class="p-4 border-2 border-green-600 rounded-xl">
+        <button @click="setUser"
+          class="p-4 bg-green-600 rounded-xl mx-2 font-medium text-white hover:bg-green-500">Set</button>
+      </div>
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
