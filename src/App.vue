@@ -7,6 +7,9 @@ const setUser = () => {
   if (!userId.value) return null;
   window._ce.setUserId(userId.value);
 }
+const clearUserId = () => {
+  window._ce.clearUserId();
+}
 </script>
 
 <template>
@@ -19,6 +22,7 @@ const setUser = () => {
         <input v-model="userId" placeholder="Set user id" type="text" class="p-4 border-2 border-green-600 rounded-xl">
         <button @click="setUser"
           class="p-4 bg-green-600 rounded-xl mx-2 font-medium text-white hover:bg-green-500">Set</button>
+        <button @click="clearUserId" class="p-4 bg-gray-600 rounded-xl mx-2 font-medium text-white hover:bg-gray-500">Clear User</button>
       </div>
 
       <nav>
