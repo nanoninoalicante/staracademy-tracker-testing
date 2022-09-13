@@ -9,6 +9,7 @@
   "dependencies": {
     "@vueuse/core": "^9.2.0",
     "pinia": "^2.0.17",
+    "random-words": "^1.2.0",
     "vue": "^3.2.37",
     "vue-router": "^4.1.3"
   },
