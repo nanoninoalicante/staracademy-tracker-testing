@@ -1,7 +1,7 @@
 <script setup>
 import { useWebSocket } from '@vueuse/core'
 import random from "random-words";
-const { status, data, send, open, close } = useWebSocket('wss://0yif8r8ode.execute-api.us-east-1.amazonaws.com/staging')
+const { status, data, send, open, close } = useWebSocket('wss://devproxy.staracademyapp.com/_t-ws-demo')
 const sendMessage = () => {
   send(JSON.stringify({ message: random({ exactly: 2, join: '-' }), ts: new Date().toISOString() }))
 }
