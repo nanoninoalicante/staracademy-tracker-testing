@@ -1,7 +1,6 @@
 <script setup>
 import { useWebSocket } from "@vueuse/core";
 import random from "random-words";
-import { useAxios } from "@vueuse/integrations/useAxios";
 const { status, data, send, open, close } = useWebSocket(
   "wss://devproxy.staracademyapp.com/_t-ws-demo"
 );
@@ -35,14 +34,10 @@ const forceErrorFromHttp = async () => {
   });
 };
 const forceErrorFromHttpUnhandled = async () => {
-  await fetch("https://webhook.site/bc78d3f2-2604-44be-8153-503b29797fda", {
+  await fetch("https://webhook.site/5a5611f9-575f-44ac-93a1-6ac3aac8c40a", {
     method: "post",
     body: "hello world",
   });
-  const { data, isFinished } = await useAxios(
-    "https://webhook.site/bc78d3f2-2604-44be-8153-503b29797fda",
-    { method: "post" }
-  );
   console.log("response: ", data);
 };
 </script>
